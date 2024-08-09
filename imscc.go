@@ -37,6 +37,10 @@ func Load(path string) (IMSCC, error) {
 	return cc, err
 }
 
+func LoadManifest(manifest types.Manifest) IMSCC {
+	return IMSCC{manifest: manifest}
+}
+
 func (cc IMSCC) Manifest() (types.Manifest, error) {
 	return cc.manifest, nil
 }
