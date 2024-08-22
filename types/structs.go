@@ -66,9 +66,9 @@ type CartridgeIcon struct {
 }
 
 type Conditionvar struct {
-	And      And      `xml:"and,omitempty"`
+	And      *And      `xml:"and,omitempty"`
 	Other    struct{} `xml:"other,omitempty"`
-	Varequal Varequal `xml:"varequal,omitempty"`
+	Varequal *Varequal `xml:"varequal,omitempty"`
 }
 
 type Contact struct {
@@ -115,7 +115,7 @@ type Displayfeedback struct {
 }
 
 type Educational struct {
-	IntendedEndUserRole IntendedEndUserRole `xml:"intendedEndUserRole,omitempty"`
+	IntendedEndUserRole *IntendedEndUserRole `xml:"intendedEndUserRole,omitempty"`
 }
 
 type Entity struct {
@@ -140,11 +140,11 @@ type Format struct {
 }
 
 type General struct {
-	Description Description `xml:"description,omitempty"`
-	Keyword     Keyword     `xml:"keyword,omitempty"`
+	Description *Description `xml:"description,omitempty"`
+	Keyword     *Keyword     `xml:"keyword,omitempty"`
 	Language    string      `xml:"language,omitempty"`
-	Structure   Structure   `xml:"structure,omitempty"`
-	Title       Title       `xml:"title,omitempty"`
+	Structure   *Structure   `xml:"structure,omitempty"`
+	Title       *Title       `xml:"title,omitempty"`
 }
 
 type Gradable struct {
@@ -165,11 +165,11 @@ type Item struct {
 	TitleAttribute string         `xml:"title,attr,omitempty"`
 	Item           []Item         `xml:"item"`
 	Itemfeedback   []Itemfeedback `xml:"itemfeedback"`
-	Itemmetadata   Itemmetadata   `xml:"itemmetadata,omitempty"`
-	Metadata       Metadata       `xml:"metadata,omitempty"`
-	Presentation   Presentation   `xml:"presentation,omitempty"`
-	Resprocessing  Resprocessing  `xml:"resprocessing,omitempty"`
-	Title          Title          `xml:"title,omitempty"`
+	Itemmetadata   *Itemmetadata   `xml:"itemmetadata,omitempty"`
+	Metadata       *Metadata       `xml:"metadata,omitempty"`
+	Presentation   *Presentation   `xml:"presentation,omitempty"`
+	Resprocessing  *Resprocessing  `xml:"resprocessing,omitempty"`
+	Title          *Title          `xml:"title,omitempty"`
 }
 
 type Itemfeedback struct {
@@ -178,11 +178,11 @@ type Itemfeedback struct {
 }
 
 type Itemmetadata struct {
-	Qtimetadata Qtimetadata `xml:"qtimetadata,omitempty"`
+	Qtimetadata *Qtimetadata `xml:"qtimetadata,omitempty"`
 }
 
 type Keyword struct {
-	String String `xml:"string,omitempty"`
+	String *String `xml:"string,omitempty"`
 }
 
 type LifeCycle struct {
@@ -190,10 +190,10 @@ type LifeCycle struct {
 }
 
 type Lom struct {
-	Educational Educational `xml:"educational,omitempty"`
-	General     General     `xml:"general,omitempty"`
-	LifeCycle   LifeCycle   `xml:"lifeCycle,omitempty"`
-	Rights      Rights      `xml:"rights,omitempty"`
+	Educational *Educational `xml:"educational,omitempty"`
+	General     *General     `xml:"general,omitempty"`
+	LifeCycle   *LifeCycle   `xml:"lifeCycle,omitempty"`
+	Rights      *Rights      `xml:"rights,omitempty"`
 }
 
 type Manifest struct {
@@ -210,7 +210,7 @@ type Manifest struct {
 }
 
 type Material struct {
-	Mattext Mattext `xml:"mattext,omitempty"`
+	Mattext *Mattext `xml:"mattext,omitempty"`
 }
 
 type Mattext struct {
@@ -219,33 +219,33 @@ type Mattext struct {
 }
 
 type Metadata struct {
-	Lom           Lom    `xml:"lom,omitempty"`
+	Lom           *Lom    `xml:"lom,omitempty"`
 	Schema        string `xml:"schema"`
 	Schemaversion string `xml:"schemaversion"`
 }
 
 type Not struct {
-	Varequal Varequal `xml:"varequal,omitempty"`
+	Varequal *Varequal `xml:"varequal,omitempty"`
 }
 
 type Organization struct {
 	Identifier string `xml:"identifier,attr,omitempty"`
 	Structure  string `xml:"structure,attr,omitempty"`
-	Item       Item   `xml:"item,omitempty"`
+	Item       *Item   `xml:"item,omitempty"`
 }
 
 type Organizations struct {
-	Organization Organization `xml:"organization,omitempty"`
+	Organization *Organization `xml:"organization,omitempty"`
 }
 
 type Outcomes struct {
-	Decvar Decvar `xml:"decvar,omitempty"`
+	Decvar *Decvar `xml:"decvar,omitempty"`
 }
 
 type Presentation struct {
-	Material    Material    `xml:"material,omitempty"`
-	ResponseLid ResponseLid `xml:"response_lid,omitempty"`
-	ResponseStr ResponseStr `xml:"response_str,omitempty"`
+	Material    *Material    `xml:"material,omitempty"`
+	ResponseLid *ResponseLid `xml:"response_lid,omitempty"`
+	ResponseStr *ResponseStr `xml:"response_str,omitempty"`
 }
 
 type Property struct {
@@ -275,7 +275,7 @@ type RenderChoice struct {
 }
 
 type RenderFib struct {
-	ResponseLabel ResponseLabel `xml:"response_label,omitempty"`
+	ResponseLabel *ResponseLabel `xml:"response_label,omitempty"`
 }
 
 type Resource struct {
@@ -286,8 +286,8 @@ type Resource struct {
 	Type        string       `xml:"type,attr,omitempty"`
 	Dependency  []Dependency `xml:"dependency"`
 	File        []File       `xml:"file"`
-	Metadata    Metadata     `xml:"metadata,omitempty"`
-	Variant     Variant      `xml:"variant,omitempty"`
+	Metadata    *Metadata     `xml:"metadata,omitempty"`
+	Variant     *Variant      `xml:"variant,omitempty"`
 }
 
 type Resources struct {
@@ -296,31 +296,31 @@ type Resources struct {
 
 type Respcondition struct {
 	Continue        string          `xml:"continue,attr,omitempty"`
-	Conditionvar    Conditionvar    `xml:"conditionvar,omitempty"`
-	Displayfeedback Displayfeedback `xml:"displayfeedback,omitempty"`
-	Setvar          Setvar          `xml:"setvar,omitempty"`
+	Conditionvar    *Conditionvar    `xml:"conditionvar,omitempty"`
+	Displayfeedback *Displayfeedback `xml:"displayfeedback,omitempty"`
+	Setvar          *Setvar          `xml:"setvar,omitempty"`
 }
 
 type ResponseLabel struct {
 	Ident    string   `xml:"ident,attr,omitempty"`
 	Rshuffle string   `xml:"rshuffle,attr,omitempty"`
-	Material Material `xml:"material,omitempty"`
+	Material *Material `xml:"material,omitempty"`
 }
 
 type ResponseLid struct {
 	Ident        string       `xml:"ident,attr,omitempty"`
 	Rcardinality string       `xml:"rcardinality,attr,omitempty"`
-	RenderChoice RenderChoice `xml:"render_choice,omitempty"`
+	RenderChoice *RenderChoice `xml:"render_choice,omitempty"`
 }
 
 type ResponseStr struct {
 	Ident        string    `xml:"ident,attr"`
 	Rcardinality string    `xml:"rcardinality,attr,omitempty"`
-	RenderFib    RenderFib `xml:"render_fib,omitempty"`
+	RenderFib    *RenderFib `xml:"render_fib,omitempty"`
 }
 
 type Resprocessing struct {
-	Outcomes      Outcomes        `xml:"outcomes,omitempty"`
+	Outcomes      *Outcomes        `xml:"outcomes,omitempty"`
 	Respcondition []Respcondition `xml:"respcondition"`
 }
 
@@ -365,7 +365,7 @@ type Text struct {
 
 type Title struct {
 	Text   string `xml:",chardata"`
-	String String `xml:"string,omitempty"`
+	String *String `xml:"string,omitempty"`
 }
 
 type Topic struct {
@@ -393,7 +393,7 @@ type Varequal struct {
 type Variant struct {
 	Identifier    string   `xml:"identifier,attr,omitempty"`
 	Identifierref string   `xml:"identifierref,attr,omitempty"`
-	Metadata      Metadata `xml:"metadata,omitempty"`
+	Metadata      *Metadata `xml:"metadata,omitempty"`
 }
 
 type Vendor struct {
