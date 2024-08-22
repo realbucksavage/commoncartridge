@@ -75,7 +75,7 @@ func (cc IMSCC) Metadata() (string, error) {
 		cc.manifest.Metadata.Lom.General.Keyword.String.Text,
 		cc.manifest.Metadata.Lom.LifeCycle.Contribute.Date.DateTime,
 		cc.manifest.Metadata.Lom.Rights.CopyrightAndOtherRestrictions.Value,
-		cc.manifest.Metadata.Lom.Rights.Description.String,
+		cc.manifest.Metadata.Lom.Rights.Description.String.Text,
 	}
 
 	serialized, err := json.Marshal(meta)
