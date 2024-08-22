@@ -94,8 +94,8 @@ type Date struct {
 }
 
 type Decvar struct {
-	Maxvalue int    `xml:"maxvalue,attr,omitempty"`
-	Minvalue int    `xml:"minvalue,attr,omitempty"`
+	Maxvalue string `xml:"maxvalue,attr,omitempty"`
+	Minvalue string `xml:"minvalue,attr,omitempty"`
 	Varname  string `xml:"varname,attr,omitempty"`
 	Vartype  string `xml:"vartype,attr,omitempty"`
 }
@@ -148,7 +148,7 @@ type General struct {
 }
 
 type Gradable struct {
-	PointsPossible int    `xml:"points_possible,attr"`
+	PointsPossible string `xml:"points_possible,attr"`
 	Text           string `xml:",chardata"`
 }
 
