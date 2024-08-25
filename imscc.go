@@ -93,6 +93,10 @@ type FullItem struct {
 func (cc IMSCC) Items() ([]FullItem, error) {
 	items := make([]FullItem, 0)
 
+	if cc.manifest.Organizations.Organization == nil || cc.manifest.Organizations.Organization.Item == nil {
+		return items, nil
+	}
+
 	//-- A CC always have only one top level item, so we can directly jump to its children
 	for _, i := range cc.manifest.Organizations.Organization.Item.Item {
 		full, err := cc.traverseItems(i)
